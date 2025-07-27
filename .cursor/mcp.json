@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "weather-server": {
+      "url": "https://tu-proyecto.vercel.app/api/mcp"
+    }
+  }
+}
