@@ -121,4 +121,16 @@ const handler = createMcpHandler(
   { basePath: "/api" }
 );
 
+// Manejador OPTIONS para CORS
+export async function OPTIONS(request: Request) {
+  return new Response(null, {
+    status: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    },
+  });
+}
+
 export { handler as GET, handler as POST, handler as DELETE };
