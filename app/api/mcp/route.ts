@@ -118,7 +118,7 @@ const handler = createMcpHandler(
     );
   },
   {},
-  {}
+  { basePath: "/api" }
 );
 
 // Manejador OPTIONS para CORS

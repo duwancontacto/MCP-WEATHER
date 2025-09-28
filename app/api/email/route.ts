@@ -349,7 +349,7 @@ ${email.content}
     );
   },
   {},
-  {}
+  { basePath: "/api" }
 );
 
 // CORS handler
