@@ -2,7 +2,7 @@ import { createMcpHandler } from "mcp-handler";
 import { z } from "zod";
 import axios from "axios";
 
-//import nodemailer from "nodemailer";
+import nodemailer from "nodemailer";
 
 // Mock email storage for demo purposes (in production, use a real email service/database)
 const mockEmailStorage: Array<{
@@ -173,15 +173,15 @@ const handler = createMcpHandler(
         try {
           console.log(`Sending email to: ${to}`);
 
-          // const transporter = nodemailer.createTransport({
-          //   host: "smtp.gmail.com", // or your SMTP provider
-          //   port: 587,
-          //   secure: false,
-          //   auth: {
-          //     user: process.env.EMAIL_USER,
-          //     pass: process.env.EMAIL_PASS,
-          //   },
-          // });
+          const transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com", // or your SMTP provider
+            port: 587,
+            secure: false,
+            auth: {
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASS,
+            },
+          });
 
           const emailInfo = {
             from: from,
@@ -191,7 +191,7 @@ const handler = createMcpHandler(
             html: `<p>${content.replace(/\n/g, "<br>")}</p>`,
           };
 
-          // await transporter.sendMail(emailInfo);
+          await transporter.sendMail(emailInfo);
 
           // For demo, we'll just simulate the email send
           console.log("Email would be sent to:", to);
