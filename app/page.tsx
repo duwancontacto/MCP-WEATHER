@@ -15,7 +15,8 @@ export default function Home() {
           </h2>
           <ul className="text-sm text-blue-800">
             <li>
-              • <code>fetch_weather</code> - Obtener el clima de una ciudad
+              • <code>fetch_weather</code> - Obtener el clima de una ciudad •{" "}
+              <code>send_email</code> - Enviar un correo electrónico
             </li>
           </ul>
         </div>
